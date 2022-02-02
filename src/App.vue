@@ -1,26 +1,45 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="app">
+    <Header />
+    <sidebar></sidebar>
+    <div class="main-container">
+      <router-view />
+    </div>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Header from './components/header'
+import Sidebar from './components/sidebar.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Header,
+    Sidebar
   }
 }
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style lang="scss">
+  @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans');
+
+  html, body {
+    margin: 0px;
+    font-family: 'Nunito Sans', sans-serif;
+  }
+  #app {
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Nunito Sans', sans-serif;
+  }
+
+  .main-container {
+    margin-top: 70px;
+    padding-left: 200px;
+  }
+
+  .ytp-expand-pause-overlay .ytp-pause-overlay {
+    display: none !important;
+  }
 </style>
