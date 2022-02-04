@@ -13,7 +13,7 @@ Youtube Clone Made with Vue3
 Create `.env` file in root folder of the application and add your youtube API KEY
 
 ```
-VUE_APP_GOOGLE_API_KEY=AIzaSyAAT9Mvxmw2_WuRXdw9X1fcucole2iS17k
+VUE_APP_GOOGLE_API_KEY=your_api_key_here
 ```
 
 Install dependencies
