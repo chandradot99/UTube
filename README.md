@@ -1,7 +1,7 @@
 # u-tube
 
-![alt text](https://ibb.co/znxt7V5)
-![alt text](https://ibb.co/2FqRqXZ)
+![alt text](https://i.ibb.co/98gdVHv/Screenshot-2022-02-04-at-4-07-46-PM.png)
+![alt text](https://i.ibb.co/dfBXBnm/Screenshot-2022-02-04-at-4-09-06-PM.png)
 
 
 ## Project setup
