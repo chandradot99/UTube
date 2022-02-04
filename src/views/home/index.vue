@@ -46,16 +46,13 @@ export default {
 
 <style lang="scss" scoped>
   .home-container {
-    // width: 100%;
-    // height: 100%;
-    padding: 20px;
+    padding: 10px;
     .columns {
       display: flex;
       flex-wrap: wrap;
       .column {
         flex: 1 0 20%;
-        margin: 5px 10px;
-        height: 350px;
+        margin: 5px 10px 30px;
       }
     }
   }

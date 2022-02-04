@@ -1,15 +1,15 @@
 <template>
   <div class="list-item" @click="goToDetail">
     <div class="thumbnail">
-      <img class="thumbnail-image" :style="{height: calcHeight}" :src="getThumbnail()" alt="">
+      <img :src="getThumbnail()" alt="">
       <div class="thumbnail-hover">
         <font-awesome-icon size="3x" :style="{ color: '#00b3ff' }" icon="play" />
       </div>
     </div>
     <div class="item-info">
-      <div class="profile-image">
+      <!-- <div class="profile-image">
         <img src="https://streamtube.org/demo/fullwidth/wp-content/uploads/2021/08/avatar-16-150x150.jpg" alt="">
-      </div>
+      </div> -->
       <div class="profile-info">
         <div class="description">{{getTitle()}}</div>
         <div class="extra-info">
@@ -39,9 +39,7 @@ export default {
     }
   },
   data () {
-    return {
-      calcHeight: 0
-    }
+    return {}
   },
   methods: {
     ...mapActions({
@@ -65,19 +63,7 @@ export default {
     },
     getPublishedTime () {
       return formatDistanceStrict(new Date(this.item.snippet.publishedAt), new Date(), { addSuffix: true })
-    },
-    getHeight () {
-      let imgElement = document.getElementsByClassName('thumbnail-image')[0]
-      if (imgElement) {
-        let height = (9/16) * imgElement.width
-        this.calcHeight = height + 'px'
-      } else {
-        this.calcHeight = 0
-      }
     }
-  },
-  mounted () {
-    this.getHeight()
   }
 }
 </script>
@@ -85,11 +71,14 @@ export default {
 <style lang="scss" scoped>
   .list-item {
     width: 100%;
+    display: flex;
     .thumbnail {
       position: relative;
       cursor: pointer;
-      width: 100%;
+      width: 200px;
+      height: 100px;
       overflow: hidden;
+      border-radius: 4px;
       img {
         width: 100%;
         height: 100%;
@@ -120,8 +109,9 @@ export default {
       }
     }
     .item-info {
-      display: flex;
-      margin-top: 10px;
+      margin-left: 10px;
+      width: 150px;
+      overflow: hidden;
       .profile-image {
         margin-right: 20px;
         img {
@@ -146,11 +136,11 @@ export default {
         }
         .chanel-info {
           padding-right: 10px;
+          overflow: hidden;
+          height: 25px;
         }
         .extra-info{
           padding-top: 5px;
-          display: flex;
-          align-items: center;
         }
       }
     }

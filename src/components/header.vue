@@ -4,24 +4,35 @@
       <img src="../assets/img/UTube-logos_black.png" alt="">
     </div>
     <div class="search-wrap">
-      <input type="text" placeholder="Search">
-      <font-awesome-icon icon="search" size="lg" :style="{ color: '#aaaaaa' }"  />
+      <input v-model="searchQuery" type="text" placeholder="Search" v-on:keyup.enter="onSearch">
+      <font-awesome-icon @click="onSearch" icon="search" size="lg" :style="{ color: '#aaaaaa' }"  />
     </div>
   </div>
 </template>
 
 <script>
+import { mapActions } from 'vuex'
+
 export default {
   data () {
-    return {}
+    return {
+      searchQuery: ''
+    }
   },
   methods: {
+    ...mapActions({
+      searchVideos: 'Home/searchVideos'
+    }),
     goToHome () {
       this.$router.push({
         path: '/'
       })
+    },
+    onSearch () {
+      this.goToHome()
+      this.searchVideos(this.searchQuery)
     }
-  }
+   }
 }
 </script>
 
@@ -51,7 +62,6 @@ export default {
       margin: 0 auto 0 auto;
       width: 450px;
       height: 35px;
-      background: #f1f3f4;
       border: 1px solid #ced4da;
       border-radius: 35px;
       display: flex;
@@ -63,6 +73,7 @@ export default {
         border: none;
         background: transparent;
         font-size: 18px;
+        color: #555;
         &:focus-visible {
           outline: none;
         }

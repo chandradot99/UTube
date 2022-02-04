@@ -3,15 +3,15 @@
     <ul>
       <li>
         <div class="header" :class="{'active': selectedSection === 'home'}" @click="selectSection('home')">
-          <font-awesome-icon icon="home" size="lg" :style="{ color: '#555' }" />
+          <font-awesome-icon icon="home" :style="{ color: '#aaaaaa' }" />
           <span>Home</span>
         </div>
       </li>
       <li>
         <div class="header" :class="{'active': selectedSection === 'categories'}" @click="selectSection('categories')">
-          <font-awesome-icon icon="video" size="lg" :style="{ color: '#555' }" />
+          <font-awesome-icon icon="video" :style="{ color: '#aaaaaa' }" />
           <span>Categories</span>
-          <font-awesome-icon icon="angle-down" class="expand-collapse" size="lg" :style="{ color: '#555' }" />
+          <font-awesome-icon icon="angle-down" class="expand-collapse" :style="{ color: '#aaaaaa' }" />
         </div>
         <div class="list" v-if="selectedSection === 'categories'">
           <ul>
@@ -109,15 +109,15 @@ export default {
         list-style: none;
       }
       .header {
-        height: 45px;
+        height: 35px;
         display: flex;
         align-items: center;
         cursor: pointer;
-        padding: 5px 10px;
+        padding: 5px 20px;
         span {
-          margin-left: 20px;
+          margin-left: 10px;
           color: #555;
-          font-size: 15px;
+          font-size: 14px;
         }
         .expand-collapse {
           margin: 0 0 0 auto;
@@ -142,7 +142,7 @@ export default {
             font-size: 14px;
             display: flex;
             align-items: center;
-            padding: 0 5px 0 10px;
+            padding: 0 5px 0 20px;
             &:hover {
               background: #f6f7f7;
               color: #dc3545;

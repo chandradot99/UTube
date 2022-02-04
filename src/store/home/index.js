@@ -6,7 +6,14 @@ export default {
   state: {
     videos: [],
     params: {
-      part: 'snippet,contentDetails',
+      part: 'snippet',
+      regionCode: 'IN',
+      chart: 'mostPopular',
+      maxResults: 50,
+      key: 'AIzaSyAAT9Mvxmw2_WuRXdw9X1fcucole2iS17k'
+    },
+    searchParams: {
+      part: 'snippet',
       regionCode: 'IN',
       chart: 'mostPopular',
       maxResults: 50,
@@ -28,6 +35,24 @@ export default {
     }
   },
   actions: {
+    async searchVideos({ commit }, searchQuery) {
+      let params = {
+        part: 'snippet',
+        regionCode: 'IN',
+        chart: 'mostPopular',
+        maxResults: 50,
+        type: 'video',
+        key: 'AIzaSyAAT9Mvxmw2_WuRXdw9X1fcucole2iS17k',
+        q: searchQuery
+      }
+      // let params = state.searchParams
+      let url = `https://youtube.googleapis.com/youtube/v3/search`
+      // let params = state.params
+      axios.get(url, { params }).then((response) => {
+        let items = response.data.items
+        commit('SET_VIDEOS', items)
+      })
+    },
     async loadVideos({ commit, state }) {
       let url = `https://youtube.googleapis.com/youtube/v3/videos`
       let params = state.params
