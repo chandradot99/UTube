@@ -10,14 +10,14 @@ export default {
       regionCode: 'IN',
       chart: 'mostPopular',
       maxResults: 50,
-      key: 'AIzaSyAAT9Mvxmw2_WuRXdw9X1fcucole2iS17k'
+      key: process.env.VUE_APP_GOOGLE_API_KEY
     },
     searchParams: {
       part: 'snippet',
       regionCode: 'IN',
       chart: 'mostPopular',
       maxResults: 50,
-      key: 'AIzaSyAAT9Mvxmw2_WuRXdw9X1fcucole2iS17k'
+      key: process.env.VUE_APP_GOOGLE_API_KEY
     }
   },
   getters: {
@@ -42,7 +42,7 @@ export default {
         chart: 'mostPopular',
         maxResults: 50,
         type: 'video',
-        key: 'AIzaSyAAT9Mvxmw2_WuRXdw9X1fcucole2iS17k',
+        key: process.env.VUE_APP_GOOGLE_API_KEY,
         q: searchQuery
       }
       // let params = state.searchParams
@@ -54,6 +54,7 @@ export default {
       })
     },
     async loadVideos({ commit, state }) {
+      console.log('process', process.env)
       let url = `https://youtube.googleapis.com/youtube/v3/videos`
       let params = state.params
       axios.get(url, { params }).then((response) => {
@@ -73,7 +74,7 @@ export default {
         regionCode: 'IN',
         chart: 'mostPopular',
         maxResults: 50,
-        key: 'AIzaSyAAT9Mvxmw2_WuRXdw9X1fcucole2iS17k'
+        key: process.env.VUE_APP_GOOGLE_API_KEY
       }
       commit('CLEAR_PARAMS', params)
     }

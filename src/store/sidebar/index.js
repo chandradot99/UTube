@@ -8,7 +8,7 @@ export default {
     selectedCategory: null,
     params: {
       regionCode: 'IN',
-      key: 'AIzaSyAAT9Mvxmw2_WuRXdw9X1fcucole2iS17k'
+      key: process.env.VUE_APP_GOOGLE_API_KEY
     }
   },
   getters: {
