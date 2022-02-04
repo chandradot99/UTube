@@ -1,5 +1,9 @@
 # u-tube
 
+![alt text](https://ibb.co/znxt7V5)
+![alt text](https://ibb.co/2FqRqXZ)
+
+
 ## Project setup
 ```
 yarn install
