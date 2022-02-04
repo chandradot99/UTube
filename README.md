@@ -1,4 +1,4 @@
-# UTube
+# UTube (Youtube Clone)
 
 [Demo Link](https://utube1.netlify.app/#/)
 
